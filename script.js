@@ -2,15 +2,14 @@
 const audio = document.querySelectorAll("audio");
 
 // Globale variabler
-const knapper = ["a","s","d","f","g","h","j","k"];
+const knapper = ["a","s","d","f","g","h","j","k","l"];
 
 // Hendelsesfunksjoner
 document.onkeydown = function(event){
-  console.log(event.key);
-  if(event.key ==="a"){
-    audio[5].play();
-  }
   for(let i = 0;i < 9; i++){
-    console.log(i);
+    if(event.key ===knapper[i]){
+      audio[i].play();
+      audio[i].currentTime = 0;
+    }
   }
 }
